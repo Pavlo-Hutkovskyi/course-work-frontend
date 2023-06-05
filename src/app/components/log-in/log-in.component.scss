@@ -1,0 +1,42 @@
+.log-in {
+  font-size: 1.3em;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.log-in input {
+  height: 5%;
+  width: 60%;
+  border: 0;
+}
+
+.log-in button {
+  color: white;
+  font-size: 1em;
+  background-color: blueviolet;
+  height: 6%;
+  width: 40%;
+}
+
+@media screen and (min-width: 480px) {
+  .log-in input {
+    height: 6%;
+    width: 30%;
+  }
+
+  .log-in button {
+    font-size: 0.5em;
+    height: 6%;
+    width: 15%;
+  }
+}
+
+.log-in input:focus {
+  color: black;
+  outline: none;
+}

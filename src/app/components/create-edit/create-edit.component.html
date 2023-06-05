@@ -1,0 +1,85 @@
+<form (ngSubmit)="submitContact()" #myForm="ngForm" autocomplete="off">
+  <div class="header-create-edit">
+    <img src="./assets/img/arrow-back-thick.svg" alt="back" class="arrow-back" (click)="goBack()">
+    <h1>
+      {{isCreateComponent ? "Новий контакт" : "Редагувати контакт"}}
+    </h1>
+  </div>
+  <br/>
+  <fieldset>
+    <legend><span class="number">1</span> Обов'язкова інформація</legend>
+    <label for="firstName">Ім'я:</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      autocomplete="off"
+      [(ngModel)]="contact.firstName"
+      [ngClass]="{'invalid-input': !validInput('firstName')}"
+    >
+
+    <label for="lastName">Призвіще:</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      autocomplete="off"
+      [(ngModel)]="contact.lastName"
+      [ngClass]="{'invalid-input': !validInput('lastName')}"
+    >
+
+    <label for="phoneNumber">Номер телефону:</label>
+    <input
+      type="tel"
+      id="phoneNumber"
+      name="phoneNumber"
+      autocomplete="off"
+      [(ngModel)]="contact.phoneNumber"
+      (input)="inputPhoneNumber()"
+      [ngClass]="{'invalid-input': !validInput('phoneNumber')}"
+    >
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span> Додаткова інформація</legend>
+    <label for="dateOfBirthday">Дата народження:</label>
+    <input
+      value="1999-01-01"
+      type="date"
+      id="dateOfBirthday"
+      name="dateOfBirthday"
+      autocomplete="off"
+      [(ngModel)]="contact.dateOfBirthday"
+      (input)="inputDateOfBirthday()"
+    >
+
+    <label for="homeAddress">Домашня адреса:</label>
+    <input
+      type="text"
+      id="homeAddress"
+      name="homeAddress"
+      autocomplete="off"
+      [(ngModel)]="contact.homeAddress"
+    >
+
+    <label for="placeOfWork">Місце роботи:</label>
+    <input
+      type="text"
+      id="placeOfWork"
+      name="placeOfWork"
+      autocomplete="off"
+      [(ngModel)]="contact.placeOfWork"
+    >
+
+    <label for="email">Пошта:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      autocomplete="off"
+      [(ngModel)]="contact.email"
+    >
+  </fieldset>
+  <button type="submit" [disabled]="!validInputDate()">Зберегти</button>
+</form>
+

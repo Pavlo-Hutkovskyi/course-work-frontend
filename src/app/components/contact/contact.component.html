@@ -1,0 +1,20 @@
+<div class="contact" [class.standard-div]="!extended" [class.extended-div]="extended">
+  <div class="contact2">
+    <div class="div-user-icon" (click)="extendedDiv()">
+      <img src="https://www.svgrepo.com/show/514283/user.svg" alt="user" class="user-icon">
+    </div>
+    <p (click)="extendedDiv()">{{contact.firstName}} {{contact.lastName}}</p>
+    <div class="div-user-icon">
+      <a class="settings-icon"></a>
+      <div class="settings-window">
+        <a href="/edit/{{contact.phoneNumber}}" class="edit-button">Редагувати</a>
+        <hr>
+        <a href="#" class="delete-button" (click) = "removeContact()">Видалити</a>
+      </div>
+    </div>
+  </div>
+  <hr class="line" *ngIf="extended">
+  <div class="extended-div-general" *ngIf="extended">
+    <p>Number:   {{contact.phoneNumber}} <br>Email: {{contact.email || "Не вказаний"}}</p>
+  </div>
+</div>

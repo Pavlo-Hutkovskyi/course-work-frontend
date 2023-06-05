@@ -1,0 +1,25 @@
+<div class="navBar">
+  <div class="dropdown">
+    <img src="./assets/img/sort-alpha-asc.svg" alt="sort" class="search-icon2">
+    <div class="dropdown-content" (change)="sortContact()">
+      <span>Сортувати по:</span>
+      <label><input type="radio" name="sort" value="firstName" [(ngModel)]="sortKey">First name</label>
+      <label><input type="radio" name="sort" value="lastName" [(ngModel)]="sortKey">Last name</label>
+      <label><input type="radio" name="sort" value="dateOfBirthday" [(ngModel)]="sortKey">Date of birthday</label>
+      <label><input type="radio" name="sort" value="phoneNumber" [(ngModel)]="sortKey">Phone number</label>
+      <label><input type="radio" name="sort" value="homeAddress" [(ngModel)]="sortKey">Home address</label>
+      <label><input type="radio" name="sort" value="placeOfWork" [(ngModel)]="sortKey">Place of work</label>
+      <label><input type="radio" name="sort" value="email" [(ngModel)]="sortKey">Email</label>
+    </div>
+  </div>
+  <input
+    type="text"
+    class="search-field"
+    placeholder="Пошук контаку ..."
+    [(ngModel)]="searchProperty"
+    autocomplete="off"
+    id="name"
+    (input)="onInputChange()">
+  <img src="./assets/img/magnifying-glass-tilted-right.svg" alt="search" class="search-icon">
+</div>
+

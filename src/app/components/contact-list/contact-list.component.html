@@ -1,0 +1,6 @@
+<div class="contact-list">
+  <app-contact *ngFor="let value of contactList" [contact] = value></app-contact>
+  <button class="button" (click)="addContact()" >
+    <p class ="plus">+</p>
+  </button>
+</div>
