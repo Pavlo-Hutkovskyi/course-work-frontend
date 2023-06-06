@@ -10,7 +10,7 @@ export class ContactsService {
   private stateContacts = new Subject<IContact[]>();
   private password = '1234';
   private contacts: IContact[] = [];
-  private baseUrl = 'https://course-work-cross-platform.herokuapp.com'
+  private baseUrl = 'https://course-work-backend-api.herokuapp.com'
 
   stateContacts$ = this.stateContacts.asObservable();
 
